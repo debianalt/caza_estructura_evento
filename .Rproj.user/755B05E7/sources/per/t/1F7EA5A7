@@ -1,0 +1,32 @@
+{
+    "id": "1F7EA5A7",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1621796381324.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "expression": "Cazadores",
+        "caption": "Cazadores",
+        "totalObservations": 158,
+        "displayedObservations": 158,
+        "variables": 19,
+        "cacheKey": "77EA6156",
+        "object": "Cazadores",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=Cazadores&cache_key=77EA6156&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 7954884633607479840,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1621796381324,
+    "read_only": false,
+    "read_only_alternatives": []
+}

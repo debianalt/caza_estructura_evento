@@ -1,0 +1,32 @@
+{
+    "id": "B66DA944",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1621796874660.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "armas",
+        "caption": "armas",
+        "totalObservations": 158,
+        "displayedObservations": 158,
+        "variables": 5,
+        "cacheKey": "F3A9B440",
+        "object": "armas",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=armas&cache_key=F3A9B440&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 4189037547313524077,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1621796874660,
+    "read_only": false,
+    "read_only_alternatives": []
+}
