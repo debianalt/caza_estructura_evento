@@ -32,6 +32,10 @@ mydata$v3 <- mydata$v5 <- NULL
 
 Cazadores$PISTOLAS <- NULL
 
+# Anular una o varias variable del análisis
+nuevodataframe <- dataframe1 [,-x:-y] 
+
+
 # Select observations based on variable values...
 # based on variable values
 newdata <- mydata[ which(mydata$gender=='F' 
@@ -46,7 +50,6 @@ library("factoextra")
 library("FactoMineR")
 
 res.mca <- MCA(Caza_breve, quanti.sup = 9:10, quali.sup = 15:16, graph = F)
+
 #Como volver factor a variables character
 Cazadores[, 1:20] <- lapply(Cazadores[, 1:20], as.factor)
-
-library(Factoshiny)
