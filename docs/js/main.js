@@ -496,30 +496,8 @@ function createMisionesMap(geoData) {
             borderwidth: 2,
             font: { size: 11 }
         },
-        annotations: [
-            {
-                lon: -56.2,
-                lat: -27.0,
-                text: '<b>PARAGUAY</b>',
-                showarrow: false,
-                font: { size: 18, color: '#95a5a6', family: 'Arial Black' },
-                textangle: -45,
-                xref: 'lon',
-                yref: 'lat'
-            },
-            {
-                lon: -53.5,
-                lat: -25.6,
-                text: '<b>BRASIL</b>',
-                showarrow: false,
-                font: { size: 18, color: '#95a5a6', family: 'Arial Black' },
-                textangle: 45,
-                xref: 'lon',
-                yref: 'lat'
-            }
-        ],
-        margin: { l: 60, r: 60, t: 80, b: 20 },
-        height: 750
+        margin: { l: 20, r: 20, t: 80, b: 40 },
+        height: 650
     };
 
     Plotly.newPlot('misiones-map', traces, layout, plotlyConfig);

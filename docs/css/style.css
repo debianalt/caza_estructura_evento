@@ -147,7 +147,8 @@ main {
 }
 
 #misiones-map {
-    height: 700px;
+    height: 650px;
+    overflow: hidden;
 }
 
 /* Info cards */
