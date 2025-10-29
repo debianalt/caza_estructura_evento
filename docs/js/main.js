@@ -23,11 +23,15 @@ const plotlyConfig = {
     }
 };
 
-// Layout base para gráficos
+// Layout base para gráficos - Tema oscuro
 const baseLayout = {
-    font: { family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', size: 12 },
-    paper_bgcolor: '#ffffff',
-    plot_bgcolor: '#f8f9fa',
+    font: {
+        family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+        size: 12,
+        color: '#e0e0e0'
+    },
+    paper_bgcolor: '#151b23',
+    plot_bgcolor: '#0a0e14',
     hovermode: 'closest',
     margin: { l: 80, r: 80, t: 80, b: 80 }
 };
@@ -106,17 +110,38 @@ function createScreePlot(eigenvalues) {
 
     const layout = {
         ...baseLayout,
-        title: 'Valores Propios y Varianza Explicada',
-        xaxis: { title: 'Dimensión', dtick: 1 },
-        yaxis: { title: 'Varianza Explicada (%)', side: 'left' },
+        title: {
+            text: 'Valores Propios y Varianza Explicada',
+            font: { color: '#e0e0e0' }
+        },
+        xaxis: {
+            title: 'Dimensión',
+            dtick: 1,
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
+        },
+        yaxis: {
+            title: 'Varianza Explicada (%)',
+            side: 'left',
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
+        },
         yaxis2: {
             title: 'Varianza Acumulada (%)',
             overlaying: 'y',
             side: 'right',
-            range: [0, 100]
+            range: [0, 100],
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
         },
         showlegend: true,
-        legend: { x: 0.7, y: 1 }
+        legend: {
+            x: 0.7,
+            y: 1,
+            bgcolor: 'rgba(21, 27, 35, 0.8)',
+            bordercolor: '#2a3442',
+            font: { color: '#e0e0e0' }
+        }
     };
 
     Plotly.newPlot('scree-plot', [trace1, trace2], layout, plotlyConfig);
@@ -137,7 +162,7 @@ function createIndividualsMap(individuals) {
             marker: {
                 color: clusterColors[cluster],
                 size: 8,
-                line: { color: 'white', width: 1 }
+                line: { color: '#0a0e14', width: 1 }
             },
             text: indices.map(i => `Individuo ${i + 1}<br>Cluster ${cluster}`),
             hovertemplate: '%{text}<br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
@@ -146,11 +171,34 @@ function createIndividualsMap(individuals) {
 
     const layout = {
         ...baseLayout,
-        title: 'Mapa Factorial de Individuos por Cluster',
-        xaxis: { title: 'Dimensión 1', zeroline: true, zerolinewidth: 2, zerolinecolor: '#999' },
-        yaxis: { title: 'Dimensión 2', zeroline: true, zerolinewidth: 2, zerolinecolor: '#999' },
+        title: {
+            text: 'Mapa Factorial de Individuos por Cluster',
+            font: { color: '#e0e0e0' }
+        },
+        xaxis: {
+            title: 'Dimensión 1',
+            zeroline: true,
+            zerolinewidth: 2,
+            zerolinecolor: '#00d4ff',
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
+        },
+        yaxis: {
+            title: 'Dimensión 2',
+            zeroline: true,
+            zerolinewidth: 2,
+            zerolinecolor: '#00d4ff',
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
+        },
         showlegend: true,
-        legend: { x: 1.02, y: 1 }
+        legend: {
+            x: 1.02,
+            y: 1,
+            bgcolor: 'rgba(21, 27, 35, 0.8)',
+            bordercolor: '#2a3442',
+            font: { color: '#e0e0e0' }
+        }
     };
 
     Plotly.newPlot('individuals-map', traces, layout, plotlyConfig);
@@ -200,13 +248,13 @@ function createCategoriesMap(categories) {
         marker: {
             color: '#9b59b6',
             size: 14,
-            line: { color: 'white', width: 2 }
+            line: { color: '#00d4ff', width: 2 }
         },
         text: cleanNames,
         textposition: textPositions,
         textfont: {
             size: 8,
-            color: '#2c3e50',
+            color: '#00d4ff',
             family: 'Arial, sans-serif'
         },
         hovertemplate: '<b>%{text}</b><br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
@@ -217,24 +265,31 @@ function createCategoriesMap(categories) {
         paper_bgcolor: baseLayout.paper_bgcolor,
         plot_bgcolor: baseLayout.plot_bgcolor,
         hovermode: baseLayout.hovermode,
-        margin: { l: 80, r: 80, t: 80, b: 100 },  // Aumentar margen inferior
-        title: 'Mapa Factorial de Categorías de Variables',
+        margin: { l: 80, r: 80, t: 80, b: 100 },
+        title: {
+            text: 'Mapa Factorial de Categorías de Variables',
+            font: { color: '#e0e0e0' }
+        },
         xaxis: {
             title: 'Dimensión 1',
             zeroline: true,
             zerolinewidth: 2,
-            zerolinecolor: '#999',
-            range: [-2, 3]
+            zerolinecolor: '#00d4ff',
+            range: [-2, 3],
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
         },
         yaxis: {
             title: 'Dimensión 2',
             zeroline: true,
             zerolinewidth: 2,
-            zerolinecolor: '#999',
-            range: [-2, 3.5]
+            zerolinecolor: '#00d4ff',
+            range: [-2, 3.5],
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
         },
         showlegend: false,
-        height: 700  // Aumentar altura total
+        height: 700
     };
 
     console.log('Creando gráfico de categorías...');
@@ -262,8 +317,8 @@ function createBiplot(individuals, categories) {
             marker: {
                 color: clusterColors[cluster],
                 size: 6,
-                opacity: 0.5,
-                line: { color: 'white', width: 0.5 }
+                opacity: 0.6,
+                line: { color: '#0a0e14', width: 0.5 }
             },
             text: indices.map(i => `Ind ${i + 1} (C${cluster})`),
             hovertemplate: '%{text}<br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
@@ -303,24 +358,47 @@ function createBiplot(individuals, categories) {
         type: 'scatter',
         name: 'Categorías',
         marker: {
-            color: '#2c3e50',
+            color: '#9b59b6',
             size: 10,
             symbol: 'diamond',
-            line: { color: 'white', width: 1.5 }
+            line: { color: '#00d4ff', width: 1.5 }
         },
         text: filteredCategories.text,
         textposition: biplotTextPositions,
-        textfont: { size: 7, color: '#2c3e50', weight: 'bold' },
+        textfont: { size: 7, color: '#00d4ff', weight: 'bold' },
         hovertemplate: '<b>%{text}</b><br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
     };
 
     const layout = {
         ...baseLayout,
-        title: 'Biplot: Individuos y Categorías',
-        xaxis: { title: 'Dimensión 1', zeroline: true, zerolinewidth: 2, zerolinecolor: '#999' },
-        yaxis: { title: 'Dimensión 2', zeroline: true, zerolinewidth: 2, zerolinecolor: '#999' },
+        title: {
+            text: 'Biplot: Individuos y Categorías',
+            font: { color: '#e0e0e0' }
+        },
+        xaxis: {
+            title: 'Dimensión 1',
+            zeroline: true,
+            zerolinewidth: 2,
+            zerolinecolor: '#00d4ff',
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
+        },
+        yaxis: {
+            title: 'Dimensión 2',
+            zeroline: true,
+            zerolinewidth: 2,
+            zerolinecolor: '#00d4ff',
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
+        },
         showlegend: true,
-        legend: { x: 1.02, y: 1 }
+        legend: {
+            x: 1.02,
+            y: 1,
+            bgcolor: 'rgba(21, 27, 35, 0.8)',
+            bordercolor: '#2a3442',
+            font: { color: '#e0e0e0' }
+        }
     };
 
     Plotly.newPlot('biplot', [...individualTraces, categoryTrace], layout, plotlyConfig);
@@ -342,7 +420,7 @@ function create3DPlot(individuals) {
             marker: {
                 color: clusterColors[cluster],
                 size: 5,
-                line: { color: 'white', width: 0.5 }
+                line: { color: '#0a0e14', width: 0.5 }
             },
             text: indices.map(i => `Individuo ${i + 1}<br>Cluster ${cluster}`),
             hovertemplate: '%{text}<br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<br>Dim3: %{z:.3f}<extra></extra>'
@@ -351,17 +429,42 @@ function create3DPlot(individuals) {
 
     const layout = {
         ...baseLayout,
-        title: 'Visualización 3D del Espacio Factorial',
+        title: {
+            text: 'Visualización 3D del Espacio Factorial',
+            font: { color: '#e0e0e0' }
+        },
         scene: {
-            xaxis: { title: 'Dimensión 1' },
-            yaxis: { title: 'Dimensión 2' },
-            zaxis: { title: 'Dimensión 3' },
+            xaxis: {
+                title: 'Dimensión 1',
+                color: '#e0e0e0',
+                gridcolor: '#2a3442',
+                backgroundcolor: '#0a0e14'
+            },
+            yaxis: {
+                title: 'Dimensión 2',
+                color: '#e0e0e0',
+                gridcolor: '#2a3442',
+                backgroundcolor: '#0a0e14'
+            },
+            zaxis: {
+                title: 'Dimensión 3',
+                color: '#e0e0e0',
+                gridcolor: '#2a3442',
+                backgroundcolor: '#0a0e14'
+            },
             camera: {
                 eye: { x: 1.5, y: 1.5, z: 1.3 }
-            }
+            },
+            bgcolor: '#0a0e14'
         },
         showlegend: true,
-        legend: { x: 0, y: 1 }
+        legend: {
+            x: 0,
+            y: 1,
+            bgcolor: 'rgba(21, 27, 35, 0.8)',
+            bordercolor: '#2a3442',
+            font: { color: '#e0e0e0' }
+        }
     };
 
     Plotly.newPlot('plot-3d', traces, layout, plotlyConfig);
@@ -379,18 +482,30 @@ function createClusterDistribution(clusters) {
         type: 'bar',
         marker: {
             color: colors,
-            line: { color: 'white', width: 2 }
+            line: { color: '#0a0e14', width: 2 }
         },
         text: sizes.map(s => `${s} individuos`),
         textposition: 'outside',
+        textfont: { color: '#e0e0e0' },
         hovertemplate: '<b>%{x}</b><br>Individuos: %{y}<extra></extra>'
     };
 
     const layout = {
         ...baseLayout,
-        title: 'Distribución de Individuos por Cluster',
-        xaxis: { title: 'Cluster' },
-        yaxis: { title: 'Número de Individuos' },
+        title: {
+            text: 'Distribución de Individuos por Cluster',
+            font: { color: '#e0e0e0' }
+        },
+        xaxis: {
+            title: 'Cluster',
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
+        },
+        yaxis: {
+            title: 'Número de Individuos',
+            color: '#e0e0e0',
+            gridcolor: '#2a3442'
+        },
         showlegend: false
     };
 
@@ -431,15 +546,15 @@ function createMisionesMap(geoData) {
                     size: deptsFiltrados.map(d => Math.sqrt(d.total_casos) * 8 + 8),
                     color: classColors[clase] || '#95a5a6',
                     line: {
-                        color: 'white',
+                        color: '#0a0e14',
                         width: 2
                     },
-                    opacity: 0.8
+                    opacity: 0.9
                 },
                 textposition: 'top center',
                 textfont: {
                     size: 9,
-                    color: '#2c3e50',
+                    color: '#00d4ff',
                     family: 'Arial, sans-serif'
                 },
                 hovertemplate: '<b>%{text}</b><br>' +
@@ -464,37 +579,41 @@ function createMisionesMap(geoData) {
 
     const layout = {
         font: baseLayout.font,
-        title: 'Distribución Geográfica de Caza Ilegal en Misiones',
+        title: {
+            text: 'Distribución Geográfica de Caza Ilegal en Misiones',
+            font: { color: '#e0e0e0' }
+        },
+        paper_bgcolor: '#151b23',
         geo: {
             scope: 'south america',
             center: { lat: -26.8, lon: -54.6 },
             projection: { type: 'mercator' },
             showland: true,
-            landcolor: '#e8f4e8',
+            landcolor: '#1a2332',
             showlakes: true,
-            lakecolor: '#1a1a1a',  // Río en negro/muy oscuro
+            lakecolor: '#005080',
             showcountries: true,
-            countrycolor: '#2c3e50',
+            countrycolor: '#00d4ff',
             countrywidth: 2,
             showsubunits: true,
-            subunitcolor: '#7f8c8d',
+            subunitcolor: '#2a3442',
             subunitwidth: 1,
             showrivers: true,
-            rivercolor: '#1a1a1a',  // Ríos en negro
+            rivercolor: '#005080',
             riverwidth: 2,
             lonaxis: { range: [-56.5, -53.3] },
             lataxis: { range: [-28.5, -25.3] },
             resolution: 50,
-            bgcolor: '#f5f5f5'
+            bgcolor: '#0a0e14'
         },
         showlegend: true,
         legend: {
             x: 0.02,
             y: 0.98,
-            bgcolor: 'rgba(255, 255, 255, 0.95)',
-            bordercolor: '#2c3e50',
+            bgcolor: 'rgba(21, 27, 35, 0.95)',
+            bordercolor: '#00d4ff',
             borderwidth: 2,
-            font: { size: 11 }
+            font: { size: 11, color: '#e0e0e0' }
         },
         margin: { l: 20, r: 20, t: 80, b: 40 },
         height: 650
