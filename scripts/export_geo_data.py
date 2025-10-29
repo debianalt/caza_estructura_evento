@@ -7,25 +7,30 @@ import pandas as pd
 import json
 from pathlib import Path
 
-# Coordenadas aproximadas de los departamentos de Misiones (centro aproximado)
+# Coordenadas corregidas de los departamentos de Misiones (centro aproximado de cada departamento)
 DEPARTAMENTOS_COORDS = {
-    'CAPITAL': {'lat': -27.3671, 'lon': -55.8961, 'name': 'Capital (Posadas)'},
-    'IGUAZÚ': {'lat': -25.6953, 'lon': -54.4367, 'name': 'Iguazú'},
-    'GENERAL MANUEL BELGRANO': {'lat': -26.0833, 'lon': -53.7500, 'name': 'Gral. M. Belgrano'},
-    'ELDORADO': {'lat': -26.4167, 'lon': -54.6167, 'name': 'Eldorado'},
-    'GUARANÍ': {'lat': -27.0000, 'lon': -54.8333, 'name': 'Guaraní'},
-    'CAINGUÁS': {'lat': -26.9167, 'lon': -55.0833, 'name': 'Cainguás'},
-    'SAN PEDRO': {'lat': -26.6167, 'lon': -54.1167, 'name': 'San Pedro'},
-    '25 DE MAYO': {'lat': -27.3833, 'lon': -54.7500, 'name': '25 de Mayo'},
-    'LIBERTADOR GENERAL SAN MARTÍN': {'lat': -26.5333, 'lon': -55.0667, 'name': 'L. Gral. San Martín'},
-    'SAN JAVIER': {'lat': -27.8667, 'lon': -55.1333, 'name': 'San Javier'},
-    'CANDELARIA': {'lat': -27.4667, 'lon': -55.7500, 'name': 'Candelaria'},
-    'LEANDRO N. ALEM': {'lat': -27.5833, 'lon': -55.3167, 'name': 'L. N. Alem'},
-    'OBERÁ': {'lat': -27.4833, 'lon': -55.1167, 'name': 'Oberá'},
-    'SAN IGNACIO': {'lat': -27.2500, 'lon': -55.5333, 'name': 'San Ignacio'},
-    'MONTECARLO': {'lat': -26.5667, 'lon': -54.7500, 'name': 'Montecarlo'},
-    'APÓSTOLES': {'lat': -27.9167, 'lon': -55.7667, 'name': 'Apóstoles'},
-    'CONCEPCIÓN': {'lat': -28.3833, 'lon': -55.5667, 'name': 'Concepción'}
+    # Zona Norte
+    'IGUAZÚ': {'lat': -25.8, 'lon': -54.5, 'name': 'Iguazú'},  # Norte, frontera con Brasil
+    'GENERAL MANUEL BELGRANO': {'lat': -26.1, 'lon': -53.8, 'name': 'Gral. M. Belgrano'},  # Noreste, frontera este
+    'SAN PEDRO': {'lat': -26.6, 'lon': -54.1, 'name': 'San Pedro'},  # Norte-centro
+    'ELDORADO': {'lat': -26.4, 'lon': -54.65, 'name': 'Eldorado'},  # Norte-centro
+    'MONTECARLO': {'lat': -26.55, 'lon': -54.75, 'name': 'Montecarlo'},  # Norte-centro
+
+    # Zona Centro
+    'GUARANÍ': {'lat': -26.9, 'lon': -54.25, 'name': 'Guaraní'},  # Este, debajo de San Pedro (El Soberbio)
+    'CAINGUÁS': {'lat': -27.05, 'lon': -55.0, 'name': 'Cainguás'},  # Centro (Campo Grande)
+    'LIBERTADOR GENERAL SAN MARTÍN': {'lat': -26.85, 'lon': -54.95, 'name': 'L. Gral. San Martín'},  # Centro
+    '25 DE MAYO': {'lat': -27.35, 'lon': -54.75, 'name': '25 de Mayo'},  # Centro-este (Alba Posse)
+    'OBERÁ': {'lat': -27.5, 'lon': -55.15, 'name': 'Oberá'},  # Centro (ciudad de Oberá)
+    'LEANDRO N. ALEM': {'lat': -27.6, 'lon': -55.35, 'name': 'L. N. Alem'},  # Centro-oeste
+
+    # Zona Sur
+    'CAPITAL': {'lat': -27.37, 'lon': -55.89, 'name': 'Capital (Posadas)'},  # Sur, capital
+    'SAN IGNACIO': {'lat': -27.25, 'lon': -55.53, 'name': 'San Ignacio'},  # Sur, cerca de Posadas
+    'CANDELARIA': {'lat': -27.47, 'lon': -55.75, 'name': 'Candelaria'},  # Sur, sobre el Paraná
+    'SAN JAVIER': {'lat': -27.87, 'lon': -55.13, 'name': 'San Javier'},  # Sur
+    'APÓSTOLES': {'lat': -27.92, 'lon': -55.77, 'name': 'Apóstoles'},  # Sur-oeste
+    'CONCEPCIÓN': {'lat': -28.0, 'lon': -55.55, 'name': 'Concepción'}  # Extremo sur
 }
 
 # Cargar datos
