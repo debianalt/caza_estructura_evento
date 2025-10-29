@@ -159,18 +159,28 @@ function createCategoriesMap(categories) {
         return;
     }
 
-    // Limpiar nombres de categorías (remover prefijo de variable)
-    const cleanNames = categories.category.map(cat => {
-        const parts = cat.split('__');
-        return parts.length > 1 ? parts[1] : cat;
+    // Filtrar categorías que NO contienen "Missing"
+    const validIndices = [];
+    const cleanNames = [];
+    const filteredDim1 = [];
+    const filteredDim2 = [];
+
+    categories.category.forEach((cat, i) => {
+        // Excluir si contiene "Missing" (case insensitive)
+        if (!cat.toLowerCase().includes('missing')) {
+            validIndices.push(i);
+            const parts = cat.split('__');
+            cleanNames.push(parts.length > 1 ? parts[1] : cat);
+            filteredDim1.push(categories.dim1[i]);
+            filteredDim2.push(categories.dim2[i]);
+        }
     });
 
-    console.log('Categorías limpias:', cleanNames);
-    console.log('Número de puntos:', categories.dim1.length);
+    console.log('Categorías filtradas (sin Missing):', cleanNames.length, 'de', categories.category.length);
 
     const trace = {
-        x: categories.dim1,
-        y: categories.dim2,
+        x: filteredDim1,
+        y: filteredDim2,
         mode: 'markers+text',
         type: 'scatter',
         marker: {
@@ -246,22 +256,40 @@ function createBiplot(individuals, categories) {
         };
     });
 
-    // Trace de categorías (más grandes y destacados)
+    // Filtrar categorías que NO contienen "Missing" para el biplot
+    const filteredCategories = {
+        x: [],
+        y: [],
+        text: []
+    };
+
+    categories.category.forEach((cat, i) => {
+        // Excluir si contiene "Missing" (case insensitive)
+        if (!cat.toLowerCase().includes('missing')) {
+            filteredCategories.x.push(categories.dim1[i]);
+            filteredCategories.y.push(categories.dim2[i]);
+            // Limpiar nombre (quitar prefijo de variable)
+            const parts = cat.split('__');
+            filteredCategories.text.push(parts.length > 1 ? parts[1] : cat);
+        }
+    });
+
+    // Trace de categorías (más discretos)
     const categoryTrace = {
-        x: categories.dim1,
-        y: categories.dim2,
+        x: filteredCategories.x,
+        y: filteredCategories.y,
         mode: 'markers+text',
         type: 'scatter',
         name: 'Categorías',
         marker: {
             color: '#2c3e50',
-            size: 14,
+            size: 10,
             symbol: 'diamond',
-            line: { color: 'white', width: 2 }
+            line: { color: 'white', width: 1.5 }
         },
-        text: categories.category,
+        text: filteredCategories.text,
         textposition: 'top center',
-        textfont: { size: 9, color: '#2c3e50', weight: 'bold' },
+        textfont: { size: 8, color: '#2c3e50', weight: 'bold' },
         hovertemplate: '<b>%{text}</b><br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
     };
 
