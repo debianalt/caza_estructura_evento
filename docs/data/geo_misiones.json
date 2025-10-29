@@ -35,8 +35,8 @@
     {
       "departamento": "IGUAZÚ",
       "name": "Iguazú",
-      "lat": -25.6953,
-      "lon": -54.4367,
+      "lat": -25.8,
+      "lon": -54.5,
       "total_casos": 53,
       "clase_predominante": "Caza como estrategia",
       "clases_detalle": {
@@ -48,8 +48,8 @@
     {
       "departamento": "GENERAL MANUEL BELGRANO",
       "name": "Gral. M. Belgrano",
-      "lat": -26.0833,
-      "lon": -53.75,
+      "lat": -26.1,
+      "lon": -53.8,
       "total_casos": 21,
       "clase_predominante": "Caza como estrategia",
       "clases_detalle": {
@@ -61,8 +61,8 @@
     {
       "departamento": "ELDORADO",
       "name": "Eldorado",
-      "lat": -26.4167,
-      "lon": -54.6167,
+      "lat": -26.4,
+      "lon": -54.65,
       "total_casos": 12,
       "clase_predominante": "Caza como estrategia",
       "clases_detalle": {
@@ -74,8 +74,8 @@
     {
       "departamento": "GUARANÍ",
       "name": "Guaraní",
-      "lat": -27.0,
-      "lon": -54.8333,
+      "lat": -26.9,
+      "lon": -54.25,
       "total_casos": 10,
       "clase_predominante": "Caza como tactica",
       "clases_detalle": {
@@ -87,8 +87,8 @@
     {
       "departamento": "SAN PEDRO",
       "name": "San Pedro",
-      "lat": -26.6167,
-      "lon": -54.1167,
+      "lat": -26.6,
+      "lon": -54.1,
       "total_casos": 6,
       "clase_predominante": "Caza como tactica",
       "clases_detalle": {
@@ -99,8 +99,8 @@
     {
       "departamento": "CAPITAL",
       "name": "Capital (Posadas)",
-      "lat": -27.3671,
-      "lon": -55.8961,
+      "lat": -27.37,
+      "lon": -55.89,
       "total_casos": 6,
       "clase_predominante": "Caza comb de capitalinos",
       "clases_detalle": {
@@ -112,8 +112,8 @@
     {
       "departamento": "CAINGUÁS",
       "name": "Cainguás",
-      "lat": -26.9167,
-      "lon": -55.0833,
+      "lat": -27.05,
+      "lon": -55.0,
       "total_casos": 6,
       "clase_predominante": "Caza como tactica",
       "clases_detalle": {
@@ -124,7 +124,7 @@
     {
       "departamento": "25 DE MAYO",
       "name": "25 de Mayo",
-      "lat": -27.3833,
+      "lat": -27.35,
       "lon": -54.75,
       "total_casos": 4,
       "clase_predominante": "Caza comb de lugareños",
@@ -136,8 +136,8 @@
     {
       "departamento": "LIBERTADOR GENERAL SAN MARTÍN",
       "name": "L. Gral. San Martín",
-      "lat": -26.8667,
-      "lon": -54.7167,
+      "lat": -26.85,
+      "lon": -54.95,
       "total_casos": 3,
       "clase_predominante": "Caza como tactica",
       "clases_detalle": {
@@ -148,8 +148,8 @@
     {
       "departamento": "SAN JAVIER",
       "name": "San Javier",
-      "lat": -27.8833,
-      "lon": -55.1333,
+      "lat": -27.87,
+      "lon": -55.13,
       "total_casos": 2,
       "clase_predominante": "Caza como tactica",
       "clases_detalle": {
@@ -160,7 +160,7 @@
     {
       "departamento": "MONTECARLO",
       "name": "Montecarlo",
-      "lat": -26.5667,
+      "lat": -26.55,
       "lon": -54.75,
       "total_casos": 1,
       "clase_predominante": "Caza como estrategia",
