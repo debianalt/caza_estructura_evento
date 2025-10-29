@@ -1,0 +1,183 @@
+{
+  "summary": {
+    "total_casos": 124,
+    "departamentos": 11,
+    "clases": {
+      "Caza como estrategia": 64,
+      "Caza como tactica": 48,
+      "Caza comb de lugareños": 7,
+      "Caza comb de capitalinos": 5
+    },
+    "top_departamentos": [
+      {
+        "name": "Iguazú",
+        "casos": 53
+      },
+      {
+        "name": "Gral. M. Belgrano",
+        "casos": 21
+      },
+      {
+        "name": "Eldorado",
+        "casos": 12
+      },
+      {
+        "name": "Guaraní",
+        "casos": 10
+      },
+      {
+        "name": "San Pedro",
+        "casos": 6
+      }
+    ]
+  },
+  "departamentos": [
+    {
+      "departamento": "IGUAZÚ",
+      "name": "Iguazú",
+      "lat": -25.6953,
+      "lon": -54.4367,
+      "total_casos": 53,
+      "clase_predominante": "Caza como estrategia",
+      "clases_detalle": {
+        "Caza como estrategia": 44,
+        "Caza como tactica": 9
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "GENERAL MANUEL BELGRANO",
+      "name": "Gral. M. Belgrano",
+      "lat": -26.0833,
+      "lon": -53.75,
+      "total_casos": 21,
+      "clase_predominante": "Caza como estrategia",
+      "clases_detalle": {
+        "Caza como estrategia": 11,
+        "Caza como tactica": 10
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "ELDORADO",
+      "name": "Eldorado",
+      "lat": -26.4167,
+      "lon": -54.6167,
+      "total_casos": 12,
+      "clase_predominante": "Caza como estrategia",
+      "clases_detalle": {
+        "Caza como estrategia": 8,
+        "Caza como tactica": 4
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "GUARANÍ",
+      "name": "Guaraní",
+      "lat": -27.0,
+      "lon": -54.8333,
+      "total_casos": 10,
+      "clase_predominante": "Caza como tactica",
+      "clases_detalle": {
+        "Caza como tactica": 7,
+        "Caza comb de lugareños": 3
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "SAN PEDRO",
+      "name": "San Pedro",
+      "lat": -26.6167,
+      "lon": -54.1167,
+      "total_casos": 6,
+      "clase_predominante": "Caza como tactica",
+      "clases_detalle": {
+        "Caza como tactica": 6
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "CAPITAL",
+      "name": "Capital (Posadas)",
+      "lat": -27.3671,
+      "lon": -55.8961,
+      "total_casos": 6,
+      "clase_predominante": "Caza comb de capitalinos",
+      "clases_detalle": {
+        "Caza comb de capitalinos": 5,
+        "Caza como tactica": 1
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "CAINGUÁS",
+      "name": "Cainguás",
+      "lat": -26.9167,
+      "lon": -55.0833,
+      "total_casos": 6,
+      "clase_predominante": "Caza como tactica",
+      "clases_detalle": {
+        "Caza como tactica": 6
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "25 DE MAYO",
+      "name": "25 de Mayo",
+      "lat": -27.3833,
+      "lon": -54.75,
+      "total_casos": 4,
+      "clase_predominante": "Caza comb de lugareños",
+      "clases_detalle": {
+        "Caza comb de lugareños": 4
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "LIBERTADOR GENERAL SAN MARTÍN",
+      "name": "L. Gral. San Martín",
+      "lat": -26.5333,
+      "lon": -55.0667,
+      "total_casos": 3,
+      "clase_predominante": "Caza como tactica",
+      "clases_detalle": {
+        "Caza como tactica": 3
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "SAN JAVIER",
+      "name": "San Javier",
+      "lat": -27.8667,
+      "lon": -55.1333,
+      "total_casos": 2,
+      "clase_predominante": "Caza como tactica",
+      "clases_detalle": {
+        "Caza como tactica": 2
+      },
+      "cluster_counts": {}
+    },
+    {
+      "departamento": "MONTECARLO",
+      "name": "Montecarlo",
+      "lat": -26.5667,
+      "lon": -54.75,
+      "total_casos": 1,
+      "clase_predominante": "Caza como estrategia",
+      "clases_detalle": {
+        "Caza como estrategia": 1
+      },
+      "cluster_counts": {}
+    }
+  ],
+  "metadata": {
+    "provincia": "Misiones",
+    "pais": "Argentina",
+    "clases_disponibles": [
+      "Caza como tactica",
+      "Caza como estrategia",
+      "Caza comb de capitalinos",
+      "Caza comb de lugareños"
+    ]
+  }
+}
