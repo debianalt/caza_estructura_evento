@@ -151,11 +151,22 @@ function createIndividualsMap(individuals) {
 
 // 3. Mapa factorial de categorías
 function createCategoriesMap(categories) {
+    console.log('createCategoriesMap llamada con:', categories);
+
+    // Verificar que existen los datos
+    if (!categories || !categories.category || !categories.dim1 || !categories.dim2) {
+        console.error('Datos de categorías incompletos:', categories);
+        return;
+    }
+
     // Limpiar nombres de categorías (remover prefijo de variable)
     const cleanNames = categories.category.map(cat => {
         const parts = cat.split('__');
         return parts.length > 1 ? parts[1] : cat;
     });
+
+    console.log('Categorías limpias:', cleanNames);
+    console.log('Número de puntos:', categories.dim1.length);
 
     const trace = {
         x: categories.dim1,
@@ -178,27 +189,37 @@ function createCategoriesMap(categories) {
     };
 
     const layout = {
-        ...baseLayout,
+        font: baseLayout.font,
+        paper_bgcolor: baseLayout.paper_bgcolor,
+        plot_bgcolor: baseLayout.plot_bgcolor,
+        hovermode: baseLayout.hovermode,
+        margin: baseLayout.margin,
         title: 'Mapa Factorial de Categorías de Variables',
         xaxis: {
             title: 'Dimensión 1',
             zeroline: true,
             zerolinewidth: 2,
             zerolinecolor: '#999',
-            range: [-2, 3]  // Ajustar rango para ver todas las categorías
+            range: [-2, 3]
         },
         yaxis: {
             title: 'Dimensión 2',
             zeroline: true,
             zerolinewidth: 2,
             zerolinecolor: '#999',
-            range: [-2, 3.5]  // Ajustar rango para ver todas las categorías
+            range: [-2, 3.5]
         },
         showlegend: false,
         height: 650
     };
 
-    Plotly.newPlot('categories-map', trace, layout, plotlyConfig);
+    console.log('Creando gráfico de categorías...');
+    try {
+        Plotly.newPlot('categories-map', [trace], layout, plotlyConfig);
+        console.log('Gráfico de categorías creado exitosamente');
+    } catch (error) {
+        console.error('Error al crear gráfico de categorías:', error);
+    }
 }
 
 // 4. Biplot (individuos + categorías)
