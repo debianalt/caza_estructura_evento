@@ -136,8 +136,8 @@
     {
       "departamento": "LIBERTADOR GENERAL SAN MARTÍN",
       "name": "L. Gral. San Martín",
-      "lat": -26.5333,
-      "lon": -55.0667,
+      "lat": -26.8667,
+      "lon": -54.7167,
       "total_casos": 3,
       "clase_predominante": "Caza como tactica",
       "clases_detalle": {
@@ -148,7 +148,7 @@
     {
       "departamento": "SAN JAVIER",
       "name": "San Javier",
-      "lat": -27.8667,
+      "lat": -27.8833,
       "lon": -55.1333,
       "total_casos": 2,
       "clase_predominante": "Caza como tactica",
