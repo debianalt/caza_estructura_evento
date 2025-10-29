@@ -54,13 +54,8 @@ async function loadData() {
         // Cargar y crear mapa geográfico
         const geoResponse = await fetch('data/geo_misiones.json');
         const geoData = await geoResponse.json();
-
-        // Cargar áreas protegidas
-        const protectedResponse = await fetch('data/protected_areas.json');
-        const protectedData = await protectedResponse.json();
-
-        createMisionesMap(geoData, protectedData);
-        console.log('Mapa geográfico y áreas protegidas cargados exitosamente');
+        createMisionesMap(geoData);
+        console.log('Mapa geográfico cargado exitosamente');
 
     } catch (error) {
         console.error('Error al cargar datos:', error);
@@ -403,9 +398,8 @@ function createClusterDistribution(clusters) {
 }
 
 // 7. Mapa Geográfico de Misiones
-function createMisionesMap(geoData, protectedData) {
+function createMisionesMap(geoData) {
     console.log('Creando mapa de Misiones...', geoData);
-    console.log('Áreas protegidas:', protectedData);
 
     const departamentos = geoData.departamentos;
 
@@ -421,35 +415,6 @@ function createMisionesMap(geoData, protectedData) {
     // Preparar datos para cada clase
     const clasesUnicas = geoData.metadata.clases_disponibles;
     const traces = [];
-
-    // Agregar áreas protegidas primero (como fondo)
-    if (protectedData && protectedData.protected_areas) {
-        protectedData.protected_areas.forEach(area => {
-            const lons = area.polygon.map(p => p[1]);
-            const lats = area.polygon.map(p => p[0]);
-
-            traces.push({
-                type: 'scattergeo',
-                lon: lons,
-                lat: lats,
-                mode: 'lines',
-                fill: 'toself',
-                fillcolor: 'rgba(76, 175, 80, 0.15)',  // Verde semitransparente
-                line: {
-                    color: '#388E3C',
-                    width: 2,
-                    dash: 'dot'  // Línea punteada
-                },
-                name: area.name,
-                hovertemplate: `<b>${area.name}</b><br>` +
-                              `Tipo: ${area.type}<br>` +
-                              `Área: ${area.area_ha.toLocaleString()} ha<br>` +
-                              '<extra></extra>',
-                showlegend: true,
-                legendgroup: 'protected'
-            });
-        });
-    }
 
     clasesUnicas.forEach(clase => {
         const deptsFiltrados = departamentos.filter(d => d.clase_predominante === clase);
