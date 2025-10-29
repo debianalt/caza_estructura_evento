@@ -191,8 +191,24 @@ main {
 }
 
 .cluster-card p {
-    color: var(--text-light);
+    color: var(--text-color);
     line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.cluster-card ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+    color: var(--text-color);
+}
+
+.cluster-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.cluster-card strong {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 /* Footer */
