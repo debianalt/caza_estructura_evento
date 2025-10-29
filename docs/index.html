@@ -16,6 +16,55 @@
     </header>
 
     <main class="container">
+        <!-- Sobre el Proyecto -->
+        <section class="info-section">
+            <div class="info-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; margin-bottom: 2rem;">
+                <h2 style="color: white; margin-top: 0;">Sobre este Proyecto</h2>
+
+                <h3 style="color: white;">¿De qué se trata?</h3>
+                <p>Esta investigación analiza la <strong>caza furtiva (ilegal) en el nordeste argentino</strong>, específicamente en la provincia de Misiones. El estudio busca comprender las diferentes formas en que se practica la caza ilegal y los perfiles sociales de quienes la realizan.</p>
+
+                <h3 style="color: white;">Contexto</h3>
+                <p>Misiones es la provincia con mayor biodiversidad de Argentina:</p>
+                <ul>
+                    <li>Cuenta con <strong>88 Áreas Naturales Protegidas</strong></li>
+                    <li>La <strong>Selva Paranaense</strong> alberga alrededor del <strong>50% de todas las especies de vertebrados del país</strong></li>
+                    <li>Actualmente, la caza de fauna silvestre es ilegal (excepto para comunidades indígenas Mbyá con métodos tradicionales)</li>
+                </ul>
+
+                <h3 style="color: white;">Fuentes de Datos</h3>
+                <p>El análisis combina información cuantitativa y cualitativa:</p>
+                <ul>
+                    <li><strong>82 actas de infracción</strong> que documentan casos de 158 cazadores ilegales capturados entre 2008-2020 por guardaparques del Ministerio de Ecología y Recursos Naturales Renovables (MEyRNR) de Misiones</li>
+                    <li><strong>Entrevistas</strong> a 20 guardaparques y 12 ex-cazadores realizadas durante 2020-2021</li>
+                    <li><strong>Trabajo de campo etnográfico</strong> de más de una década sobre las relaciones entre poblaciones locales y áreas protegidas</li>
+                </ul>
+
+                <h3 style="color: white;">Metodología</h3>
+                <p>Se utilizó un enfoque mixto combinando:</p>
+                <ul>
+                    <li><strong>Análisis de Correspondencias Múltiples (ACM)</strong>: técnica estadística que identifica patrones y relaciones entre múltiples variables</li>
+                    <li><strong>Clasificación Ascendente Jerárquica (CAJ)</strong>: agrupa a los cazadores en tipos según sus características comunes</li>
+                    <li><strong>Análisis etnográfico</strong>: comprensión de los sentidos sociales y culturales asociados a la caza</li>
+                </ul>
+
+                <h3 style="color: white;">¿Qué demuestra?</h3>
+                <p>El estudio identifica <strong>tres tipos principales de caza ilegal</strong> en Misiones:</p>
+                <ol>
+                    <li><strong>Caza como táctica</strong> (32%): practicada por trabajadores rurales jóvenes en situación económica vulnerable, poco planificada y oportunista</li>
+                    <li><strong>Caza como estrategia</strong> (53%): realizada por grupos organizados con mejor situación económica, altamente planificada</li>
+                    <li><strong>Caza combinada</strong> (15%): combina pesca con caza de mamíferos/aves, incluye extranjeros y lugareños</li>
+                </ol>
+
+                <p>Los resultados muestran que la caza ilegal no es un fenómeno homogéneo, sino que responde a <strong>diferentes motivaciones, recursos y contextos sociales</strong>. Comprender estas diferencias es fundamental para diseñar políticas de conservación más efectivas.</p>
+
+                <h3 style="color: white;">Citación</h3>
+                <p style="font-size: 0.9em; font-style: italic; border-left: 3px solid white; padding-left: 1rem; margin-top: 1rem;">
+                    Gómez, E., & Miño, M. G. (2022). Hacia una tipología de la caza furtiva en el nordeste argentino. <em>Cuadernos de la Facultad de Humanidades y Cs. Sociales | UNJu</em>, (61), 113-134. ISSN: 0327-1471.
+                </p>
+            </div>
+        </section>
+
         <!-- Información general -->
         <section class="info-section">
             <div class="info-card">
@@ -69,7 +118,7 @@
          <!-- Esbozo cartográfico de la provincia de Misiones (Argentina) -->
         <section class="chart-section">
             <h2>Mapa Geográfico: Distribución de Caza Ilegal en Misiones</h2>
-            <p class="description">El tamaño de los marcadores representa la cantidad de casos, y los colores el tipo predominante de caza segun el domicilio declarado de los cazadores.</p>
+            <p class="description">El tamaño de los marcadores representa la cantidad de casos, los colores indican el tipo predominante de caza, y la ubicación geográfica el domicilio declarado por los cazadores.</p>
             <div id="misiones-map"></div>
         </section>
 
@@ -152,8 +201,17 @@
 
     <footer>
         <div class="container">
-            <p>Análisis de Correspondencias Múltiples - Datos de cazadores en Misiones, Argentina</p>
+            <p><strong>Análisis de Correspondencias Múltiples - Datos de cazadores en Misiones, Argentina</strong></p>
             <p>Visualizaciones interactivas creadas con Plotly.js</p>
+            <hr style="margin: 1rem 0; border: none; border-top: 1px solid rgba(255,255,255,0.3);">
+            <p style="font-size: 0.9em; margin-top: 1rem;">
+                <strong>Basado en:</strong><br>
+                Gómez, E., & Miño, M. G. (2022). Hacia una tipología de la caza furtiva en el nordeste argentino.
+                <em>Cuadernos de la Facultad de Humanidades y Cs. Sociales | UNJu</em>, (61), 113-134. ISSN: 0327-1471.
+            </p>
+            <p style="font-size: 0.85em; margin-top: 0.5rem;">
+                CONICET/Universidad Nacional de Misiones - Posadas, Misiones, Argentina
+            </p>
         </div>
     </footer>
 
