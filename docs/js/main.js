@@ -1,5 +1,8 @@
 // Main JavaScript para visualizaciones MCA
 
+// Configuración de colores académicos/científicos
+const academicBlue = '#2C5F7C';
+
 // Configuración de colores por cluster
 const clusterColors = {
     1: '#3498db',
@@ -179,7 +182,7 @@ function createIndividualsMap(individuals) {
             title: 'Dimensión 1',
             zeroline: true,
             zerolinewidth: 2,
-            zerolinecolor: '#00d4ff',
+            zerolinecolor: academicBlue,
             color: '#e0e0e0',
             gridcolor: '#2a3442'
         },
@@ -187,7 +190,7 @@ function createIndividualsMap(individuals) {
             title: 'Dimensión 2',
             zeroline: true,
             zerolinewidth: 2,
-            zerolinecolor: '#00d4ff',
+            zerolinecolor: academicBlue,
             color: '#e0e0e0',
             gridcolor: '#2a3442'
         },
@@ -248,13 +251,13 @@ function createCategoriesMap(categories) {
         marker: {
             color: '#9b59b6',
             size: 14,
-            line: { color: '#00d4ff', width: 2 }
+            line: { color: academicBlue, width: 2 }
         },
         text: cleanNames,
         textposition: textPositions,
         textfont: {
             size: 8,
-            color: '#00d4ff',
+            color: academicBlue,
             family: 'Arial, sans-serif'
         },
         hovertemplate: '<b>%{text}</b><br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
@@ -274,7 +277,7 @@ function createCategoriesMap(categories) {
             title: 'Dimensión 1',
             zeroline: true,
             zerolinewidth: 2,
-            zerolinecolor: '#00d4ff',
+            zerolinecolor: academicBlue,
             range: [-2, 3],
             color: '#e0e0e0',
             gridcolor: '#2a3442'
@@ -283,7 +286,7 @@ function createCategoriesMap(categories) {
             title: 'Dimensión 2',
             zeroline: true,
             zerolinewidth: 2,
-            zerolinecolor: '#00d4ff',
+            zerolinecolor: academicBlue,
             range: [-2, 3.5],
             color: '#e0e0e0',
             gridcolor: '#2a3442'
@@ -361,11 +364,11 @@ function createBiplot(individuals, categories) {
             color: '#9b59b6',
             size: 10,
             symbol: 'diamond',
-            line: { color: '#00d4ff', width: 1.5 }
+            line: { color: academicBlue, width: 1.5 }
         },
         text: filteredCategories.text,
         textposition: biplotTextPositions,
-        textfont: { size: 7, color: '#00d4ff', weight: 'bold' },
+        textfont: { size: 7, color: academicBlue, weight: 'bold' },
         hovertemplate: '<b>%{text}</b><br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
     };
 
@@ -379,7 +382,7 @@ function createBiplot(individuals, categories) {
             title: 'Dimensión 1',
             zeroline: true,
             zerolinewidth: 2,
-            zerolinecolor: '#00d4ff',
+            zerolinecolor: academicBlue,
             color: '#e0e0e0',
             gridcolor: '#2a3442'
         },
@@ -387,7 +390,7 @@ function createBiplot(individuals, categories) {
             title: 'Dimensión 2',
             zeroline: true,
             zerolinewidth: 2,
-            zerolinecolor: '#00d4ff',
+            zerolinecolor: academicBlue,
             color: '#e0e0e0',
             gridcolor: '#2a3442'
         },
@@ -554,7 +557,7 @@ function createMisionesMap(geoData) {
                 textposition: 'top center',
                 textfont: {
                     size: 9,
-                    color: '#00d4ff',
+                    color: academicBlue,
                     family: 'Arial, sans-serif'
                 },
                 hovertemplate: '<b>%{text}</b><br>' +
@@ -593,7 +596,7 @@ function createMisionesMap(geoData) {
             showlakes: true,
             lakecolor: '#005080',
             showcountries: true,
-            countrycolor: '#00d4ff',
+            countrycolor: academicBlue,
             countrywidth: 2,
             showsubunits: true,
             subunitcolor: '#2a3442',
@@ -611,7 +614,7 @@ function createMisionesMap(geoData) {
             x: 0.02,
             y: 0.98,
             bgcolor: 'rgba(21, 27, 35, 0.95)',
-            bordercolor: '#00d4ff',
+            bordercolor: academicBlue,
             borderwidth: 2,
             font: { size: 11, color: '#e0e0e0' }
         },
