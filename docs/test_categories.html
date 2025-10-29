@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Mapa de Categorías</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        #categories-map {
+            width: 100%;
+            height: 600px;
+            background: white;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        .info {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test del Mapa Factorial de Categorías</h1>
+
+    <div class="info">
+        <h3>Instrucciones:</h3>
+        <p>1. Abre la consola del navegador (F12)</p>
+        <p>2. Verifica los mensajes de console.log</p>
+        <p>3. Si ves el gráfico abajo, ¡funciona!</p>
+    </div>
+
+    <div id="categories-map"></div>
+
+    <script>
+        console.log('=== INICIANDO TEST ===');
+
+        // Cargar datos
+        fetch('data/mca_results.json')
+            .then(response => {
+                console.log('Respuesta del fetch:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Datos cargados:', data);
+                console.log('Categories:', data.categories);
+
+                // Verificar estructura
+                console.log('¿Existe categories?', !!data.categories);
+                console.log('¿Existe categories.category?', !!data.categories?.category);
+                console.log('¿Existe categories.dim1?', !!data.categories?.dim1);
+                console.log('¿Existe categories.dim2?', !!data.categories?.dim2);
+
+                if (data.categories) {
+                    console.log('Número de categorías:', data.categories.category?.length);
+                    console.log('Primera categoría:', data.categories.category?.[0]);
+                    console.log('Primer dim1:', data.categories.dim1?.[0]);
+                    console.log('Primer dim2:', data.categories.dim2?.[0]);
+
+                    // Crear gráfico
+                    createCategoriesMap(data.categories);
+                } else {
+                    console.error('¡No hay datos de categorías!');
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar datos:', error);
+            });
+
+        function createCategoriesMap(categories) {
+            console.log('>>> createCategoriesMap iniciada');
+
+            if (!categories || !categories.category || !categories.dim1 || !categories.dim2) {
+                console.error('Datos incompletos');
+                return;
+            }
+
+            // Limpiar nombres
+            const cleanNames = categories.category.map(cat => {
+                const parts = cat.split('__');
+                return parts.length > 1 ? parts[1] : cat;
+            });
+
+            console.log('Nombres limpios:', cleanNames);
+
+            const trace = {
+                x: categories.dim1,
+                y: categories.dim2,
+                mode: 'markers+text',
+                type: 'scatter',
+                marker: {
+                    color: '#9b59b6',
+                    size: 14,
+                    line: { color: 'white', width: 2 }
+                },
+                text: cleanNames,
+                textposition: 'top center',
+                textfont: {
+                    size: 9,
+                    color: '#2c3e50'
+                },
+                hovertemplate: '<b>%{text}</b><br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
+            };
+
+            const layout = {
+                title: 'Mapa Factorial de Categorías - TEST',
+                xaxis: {
+                    title: 'Dimensión 1',
+                    zeroline: true,
+                    zerolinewidth: 2,
+                    zerolinecolor: '#999',
+                    range: [-2, 3]
+                },
+                yaxis: {
+                    title: 'Dimensión 2',
+                    zeroline: true,
+                    zerolinewidth: 2,
+                    zerolinecolor: '#999',
+                    range: [-2, 3.5]
+                },
+                showlegend: false,
+                height: 600
+            };
+
+            console.log('Creando plot...');
+            try {
+                Plotly.newPlot('categories-map', [trace], layout, {
+                    responsive: true,
+                    displayModeBar: true
+                });
+                console.log('✓ Plot creado exitosamente!');
+            } catch (error) {
+                console.error('✗ Error al crear plot:', error);
+            }
+        }
+    </script>
+</body>
+</html>
