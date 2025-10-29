@@ -17,8 +17,8 @@ DEPARTAMENTOS_COORDS = {
     'CAINGUÁS': {'lat': -26.9167, 'lon': -55.0833, 'name': 'Cainguás'},
     'SAN PEDRO': {'lat': -26.6167, 'lon': -54.1167, 'name': 'San Pedro'},
     '25 DE MAYO': {'lat': -27.3833, 'lon': -54.7500, 'name': '25 de Mayo'},
-    'LIBERTADOR GENERAL SAN MARTÍN': {'lat': -26.5333, 'lon': -55.0667, 'name': 'L. Gral. San Martín'},
-    'SAN JAVIER': {'lat': -27.8667, 'lon': -55.1333, 'name': 'San Javier'},
+    'LIBERTADOR GENERAL SAN MARTÍN': {'lat': -26.8667, 'lon': -54.7167, 'name': 'L. Gral. San Martín'},  # Corregido: más al centro-este
+    'SAN JAVIER': {'lat': -27.8833, 'lon': -55.1333, 'name': 'San Javier'},  # Ajustado: sur de Misiones
     'CANDELARIA': {'lat': -27.4667, 'lon': -55.7500, 'name': 'Candelaria'},
     'LEANDRO N. ALEM': {'lat': -27.5833, 'lon': -55.3167, 'name': 'L. N. Alem'},
     'OBERÁ': {'lat': -27.4833, 'lon': -55.1167, 'name': 'Oberá'},

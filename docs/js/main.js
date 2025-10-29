@@ -467,30 +467,37 @@ function createMisionesMap(geoData) {
         title: 'Distribución Geográfica de Caza Ilegal en Misiones',
         geo: {
             scope: 'south america',
-            center: { lat: -27.0, lon: -54.8 },
+            center: { lat: -26.8, lon: -54.6 },
             projection: { type: 'mercator' },
             showland: true,
-            landcolor: '#ecf0f1',
+            landcolor: '#e8f4e8',
             showlakes: true,
-            lakecolor: '#3498db',
+            lakecolor: '#1a1a1a',  // Río en negro/muy oscuro
             showcountries: true,
-            countrycolor: '#95a5a6',
+            countrycolor: '#2c3e50',
+            countrywidth: 2,
             showsubunits: true,
             subunitcolor: '#7f8c8d',
-            lonaxis: { range: [-56.5, -53.5] },
-            lataxis: { range: [-28.2, -25.3] },
-            resolution: 50
+            subunitwidth: 1,
+            showrivers: true,
+            rivercolor: '#1a1a1a',  // Ríos en negro
+            riverwidth: 2,
+            lonaxis: { range: [-56.5, -53.3] },
+            lataxis: { range: [-28.5, -25.3] },
+            resolution: 50,
+            bgcolor: '#f5f5f5'
         },
         showlegend: true,
         legend: {
             x: 0.02,
             y: 0.98,
-            bgcolor: 'rgba(255, 255, 255, 0.9)',
-            bordercolor: '#bdc3c7',
-            borderwidth: 1
+            bgcolor: 'rgba(255, 255, 255, 0.95)',
+            bordercolor: '#2c3e50',
+            borderwidth: 2,
+            font: { size: 11 }
         },
         margin: { l: 20, r: 20, t: 80, b: 20 },
-        height: 700
+        height: 750
     };
 
     Plotly.newPlot('misiones-map', traces, layout, plotlyConfig);
