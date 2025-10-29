@@ -496,7 +496,29 @@ function createMisionesMap(geoData) {
             borderwidth: 2,
             font: { size: 11 }
         },
-        margin: { l: 20, r: 20, t: 80, b: 20 },
+        annotations: [
+            {
+                xref: 'paper',
+                yref: 'paper',
+                x: 0.05,
+                y: 0.5,
+                text: '<b>PARAGUAY</b>',
+                showarrow: false,
+                font: { size: 16, color: '#7f8c8d', family: 'Arial Black' },
+                textangle: -90
+            },
+            {
+                xref: 'paper',
+                yref: 'paper',
+                x: 0.95,
+                y: 0.5,
+                text: '<b>BRASIL</b>',
+                showarrow: false,
+                font: { size: 16, color: '#7f8c8d', family: 'Arial Black' },
+                textangle: -90
+            }
+        ],
+        margin: { l: 60, r: 60, t: 80, b: 20 },
         height: 750
     };
 
