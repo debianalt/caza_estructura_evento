@@ -1,6 +1,6 @@
 # Visualizaciones Interactivas del Análisis MCA
 
-Este directorio contiene las visualizaciones interactivas del Análisis de Correspondencias Múltiples (MCA) sobre la estructura del evento de caza en Misiones, Argentina.
+Este directorio contiene las visualizaciones interactivas del Análisis de Correspondencias Múltiples (MCA) sobre la caza como estructura y evento en Misiones, Argentina.
 
 ## Estructura
 
