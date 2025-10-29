@@ -7,9 +7,9 @@
 
 :root {
     /* Paleta oscura completa */
-    --primary-color: #00d4ff;
-    --secondary-color: #00a8cc;
-    --accent-color: #0099b8;
+    --primary-color: #1976D2;
+    --secondary-color: #1565C0;
+    --accent-color: #0D47A1;
     --background-color: #0a0e14;
     --card-background: #151b23;
     --text-color: #e0e0e0;
@@ -46,7 +46,7 @@ header {
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
     position: relative;
-    border-bottom: 2px solid #00d4ff;
+    border-bottom: 2px solid #1976D2;
 }
 
 header::before {
@@ -159,7 +159,7 @@ main {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    border: 1px solid #00d4ff;
+    border: 1px solid #1976D2;
     position: relative;
     overflow: hidden;
 }
@@ -263,7 +263,7 @@ main {
 }
 
 .cluster-card h3 {
-    color: #00d4ff;
+    color: #1976D2;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -285,7 +285,7 @@ main {
 }
 
 .cluster-card strong {
-    color: #00d4ff;
+    color: #1976D2;
     font-weight: 600;
 }
 
@@ -297,7 +297,7 @@ footer {
     padding: 2rem 0;
     margin-top: 3rem;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8);
-    border-top: 2px solid #00d4ff;
+    border-top: 2px solid #1976D2;
 }
 
 footer p {
@@ -375,5 +375,5 @@ footer p {
 }
 
 .js-plotly-plot .plotly .modebar-btn:hover path {
-    fill: #00d4ff !important;
+    fill: #1976D2 !important;
 }
