@@ -178,6 +178,13 @@ function createCategoriesMap(categories) {
 
     console.log('Categorías filtradas (sin Missing):', cleanNames.length, 'de', categories.category.length);
 
+    // Variar posiciones de texto para evitar superposiciones
+    const textPositions = [];
+    const positions = ['top center', 'bottom center', 'middle right', 'middle left', 'top right', 'top left', 'bottom right', 'bottom left'];
+    for (let i = 0; i < cleanNames.length; i++) {
+        textPositions.push(positions[i % positions.length]);
+    }
+
     const trace = {
         x: filteredDim1,
         y: filteredDim2,
@@ -189,9 +196,9 @@ function createCategoriesMap(categories) {
             line: { color: 'white', width: 2 }
         },
         text: cleanNames,
-        textposition: 'top center',
+        textposition: textPositions,
         textfont: {
-            size: 9,
+            size: 8,
             color: '#2c3e50',
             family: 'Arial, sans-serif'
         },
@@ -274,6 +281,13 @@ function createBiplot(individuals, categories) {
         }
     });
 
+    // Variar posiciones de texto para evitar superposiciones en biplot
+    const biplotTextPositions = [];
+    const biplotPositions = ['top center', 'bottom center', 'middle right', 'middle left', 'top right', 'top left', 'bottom right', 'bottom left'];
+    for (let i = 0; i < filteredCategories.text.length; i++) {
+        biplotTextPositions.push(biplotPositions[i % biplotPositions.length]);
+    }
+
     // Trace de categorías (más discretos)
     const categoryTrace = {
         x: filteredCategories.x,
@@ -288,8 +302,8 @@ function createBiplot(individuals, categories) {
             line: { color: 'white', width: 1.5 }
         },
         text: filteredCategories.text,
-        textposition: 'top center',
-        textfont: { size: 8, color: '#2c3e50', weight: 'bold' },
+        textposition: biplotTextPositions,
+        textfont: { size: 7, color: '#2c3e50', weight: 'bold' },
         hovertemplate: '<b>%{text}</b><br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
     };
 
