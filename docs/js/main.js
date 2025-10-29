@@ -496,8 +496,8 @@ function createMisionesMap(geoData) {
             borderwidth: 2,
             font: { size: 11 }
         },
-        margin: { l: 20, r: 20, t: 80, b: 20 },
-        height: 750
+        margin: { l: 20, r: 20, t: 80, b: 40 },
+        height: 650
     };
 
     Plotly.newPlot('misiones-map', traces, layout, plotlyConfig);
