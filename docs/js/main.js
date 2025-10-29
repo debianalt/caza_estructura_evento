@@ -49,10 +49,17 @@ async function loadData() {
         create3DPlot(data.individuals);
         createClusterDistribution(data.clusters);
 
-        console.log('Visualizaciones cargadas exitosamente');
+        console.log('Visualizaciones MCA cargadas exitosamente');
+
+        // Cargar y crear mapa geográfico
+        const geoResponse = await fetch('data/geo_misiones.json');
+        const geoData = await geoResponse.json();
+        createMisionesMap(geoData);
+        console.log('Mapa geográfico cargado exitosamente');
+
     } catch (error) {
         console.error('Error al cargar datos:', error);
-        alert('Error al cargar los datos del análisis MCA. Por favor, verifica que el archivo mca_results.json existe.');
+        alert('Error al cargar los datos. Por favor, verifica los archivos JSON.');
     }
 }
 
@@ -210,7 +217,7 @@ function createCategoriesMap(categories) {
         paper_bgcolor: baseLayout.paper_bgcolor,
         plot_bgcolor: baseLayout.plot_bgcolor,
         hovermode: baseLayout.hovermode,
-        margin: baseLayout.margin,
+        margin: { l: 80, r: 80, t: 80, b: 100 },  // Aumentar margen inferior
         title: 'Mapa Factorial de Categorías de Variables',
         xaxis: {
             title: 'Dimensión 1',
@@ -227,7 +234,7 @@ function createCategoriesMap(categories) {
             range: [-2, 3.5]
         },
         showlegend: false,
-        height: 650
+        height: 700  // Aumentar altura total
     };
 
     console.log('Creando gráfico de categorías...');
@@ -388,6 +395,105 @@ function createClusterDistribution(clusters) {
     };
 
     Plotly.newPlot('cluster-distribution', [trace], layout, plotlyConfig);
+}
+
+// 7. Mapa Geográfico de Misiones
+function createMisionesMap(geoData) {
+    console.log('Creando mapa de Misiones...', geoData);
+
+    const departamentos = geoData.departamentos;
+
+    // Colores por clase predominante
+    const classColors = {
+        'Caza como estrategia': '#e74c3c',
+        'Caza como tactica': '#3498db',
+        'Caza comb de lugareños': '#2ecc71',
+        'Caza comb de extranjeros': '#9b59b6',
+        'Caza comb de capitalinos': '#f39c12'
+    };
+
+    // Preparar datos para cada clase
+    const clasesUnicas = geoData.metadata.clases_disponibles;
+    const traces = [];
+
+    clasesUnicas.forEach(clase => {
+        const deptsFiltrados = departamentos.filter(d => d.clase_predominante === clase);
+
+        if (deptsFiltrados.length > 0) {
+            const trace = {
+                type: 'scattergeo',
+                lon: deptsFiltrados.map(d => d.lon),
+                lat: deptsFiltrados.map(d => d.lat),
+                text: deptsFiltrados.map(d => d.name),
+                mode: 'markers+text',
+                name: clase,
+                marker: {
+                    size: deptsFiltrados.map(d => Math.sqrt(d.total_casos) * 8 + 8),
+                    color: classColors[clase] || '#95a5a6',
+                    line: {
+                        color: 'white',
+                        width: 2
+                    },
+                    opacity: 0.8
+                },
+                textposition: 'top center',
+                textfont: {
+                    size: 9,
+                    color: '#2c3e50',
+                    family: 'Arial, sans-serif'
+                },
+                hovertemplate: '<b>%{text}</b><br>' +
+                               'Casos: ' + deptsFiltrados.map(d => d.total_casos).map(c => '%{marker.size}') +
+                               '<br>Clase: ' + clase +
+                               '<extra></extra>',
+                customdata: deptsFiltrados.map(d => ({
+                    total: d.total_casos,
+                    clase: clase,
+                    detalle: d.clases_detalle
+                })),
+                hovertemplate: deptsFiltrados.map(d =>
+                    `<b>${d.name}</b><br>` +
+                    `Total casos: ${d.total_casos}<br>` +
+                    `Clase predominante: ${d.clase_predominante}<br>` +
+                    `<extra></extra>`
+                )
+            };
+            traces.push(trace);
+        }
+    });
+
+    const layout = {
+        font: baseLayout.font,
+        title: 'Distribución Geográfica de Caza Ilegal en Misiones',
+        geo: {
+            scope: 'south america',
+            center: { lat: -27.0, lon: -54.8 },
+            projection: { type: 'mercator' },
+            showland: true,
+            landcolor: '#ecf0f1',
+            showlakes: true,
+            lakecolor: '#3498db',
+            showcountries: true,
+            countrycolor: '#95a5a6',
+            showsubunits: true,
+            subunitcolor: '#7f8c8d',
+            lonaxis: { range: [-56.5, -53.5] },
+            lataxis: { range: [-28.2, -25.3] },
+            resolution: 50
+        },
+        showlegend: true,
+        legend: {
+            x: 0.02,
+            y: 0.98,
+            bgcolor: 'rgba(255, 255, 255, 0.9)',
+            bordercolor: '#bdc3c7',
+            borderwidth: 1
+        },
+        margin: { l: 20, r: 20, t: 80, b: 20 },
+        height: 700
+    };
+
+    Plotly.newPlot('misiones-map', traces, layout, plotlyConfig);
 }
 
 // Inicializar cuando el DOM esté listo

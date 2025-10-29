@@ -135,10 +135,19 @@ main {
 #categories-map,
 #biplot,
 #plot-3d,
-#cluster-distribution {
+#cluster-distribution,
+#misiones-map {
     width: 100%;
     height: 600px;
     margin-top: 1rem;
+}
+
+#categories-map {
+    height: 700px;
+}
+
+#misiones-map {
+    height: 700px;
 }
 
 /* Info cards */
