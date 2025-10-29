@@ -1,0 +1,229 @@
+{
+  "protected_areas": [
+    {
+      "name": "Parque Nacional Iguazú",
+      "type": "Parque Nacional",
+      "area_ha": 67620,
+      "polygon": [
+        [
+          -25.55,
+          -54.6
+        ],
+        [
+          -25.55,
+          -54.1
+        ],
+        [
+          -25.8,
+          -54.1
+        ],
+        [
+          -25.8,
+          -54.6
+        ],
+        [
+          -25.55,
+          -54.6
+        ]
+      ]
+    },
+    {
+      "name": "Reserva de Biosfera Yabotí",
+      "type": "Reserva de Biosfera",
+      "area_ha": 236313,
+      "polygon": [
+        [
+          -26.5,
+          -53.7
+        ],
+        [
+          -26.5,
+          -53.4
+        ],
+        [
+          -27.2,
+          -53.4
+        ],
+        [
+          -27.2,
+          -53.7
+        ],
+        [
+          -26.5,
+          -53.7
+        ]
+      ]
+    },
+    {
+      "name": "Parque Provincial Urugua-í",
+      "type": "Parque Provincial",
+      "area_ha": 84000,
+      "polygon": [
+        [
+          -25.9,
+          -54.1
+        ],
+        [
+          -25.9,
+          -53.8
+        ],
+        [
+          -26.15,
+          -53.8
+        ],
+        [
+          -26.15,
+          -54.1
+        ],
+        [
+          -25.9,
+          -54.1
+        ]
+      ]
+    },
+    {
+      "name": "Parque Provincial Moconá",
+      "type": "Parque Provincial",
+      "area_ha": 1000,
+      "polygon": [
+        [
+          -27.12,
+          -53.88
+        ],
+        [
+          -27.12,
+          -53.82
+        ],
+        [
+          -27.18,
+          -53.82
+        ],
+        [
+          -27.18,
+          -53.88
+        ],
+        [
+          -27.12,
+          -53.88
+        ]
+      ]
+    },
+    {
+      "name": "Parque Provincial Cruce Caballero",
+      "type": "Parque Provincial",
+      "area_ha": 507,
+      "polygon": [
+        [
+          -26.45,
+          -54.95
+        ],
+        [
+          -26.45,
+          -54.9
+        ],
+        [
+          -26.52,
+          -54.9
+        ],
+        [
+          -26.52,
+          -54.95
+        ],
+        [
+          -26.45,
+          -54.95
+        ]
+      ]
+    },
+    {
+      "name": "Parque Provincial Puerto Península",
+      "type": "Parque Provincial",
+      "area_ha": 6800,
+      "polygon": [
+        [
+          -26.25,
+          -54.7
+        ],
+        [
+          -26.25,
+          -54.55
+        ],
+        [
+          -26.35,
+          -54.55
+        ],
+        [
+          -26.35,
+          -54.7
+        ],
+        [
+          -26.25,
+          -54.7
+        ]
+      ]
+    },
+    {
+      "name": "Parque Provincial Cañadón de Profundidad",
+      "type": "Parque Provincial",
+      "area_ha": 102,
+      "polygon": [
+        [
+          -27.25,
+          -55.52
+        ],
+        [
+          -27.25,
+          -55.48
+        ],
+        [
+          -27.28,
+          -55.48
+        ],
+        [
+          -27.28,
+          -55.52
+        ],
+        [
+          -27.25,
+          -55.52
+        ]
+      ]
+    },
+    {
+      "name": "Parque Provincial Salto Encantado",
+      "type": "Parque Provincial",
+      "area_ha": 13227,
+      "polygon": [
+        [
+          -27.45,
+          -55.05
+        ],
+        [
+          -27.45,
+          -54.9
+        ],
+        [
+          -27.55,
+          -54.9
+        ],
+        [
+          -27.55,
+          -55.05
+        ],
+        [
+          -27.45,
+          -55.05
+        ]
+      ]
+    }
+  ],
+  "metadata": {
+    "total_areas": 8,
+    "total_area_ha": 409569,
+    "types": [
+      "Parque Nacional",
+      "Reserva de Biosfera",
+      "Parque Provincial"
+    ]
+  }
+}
