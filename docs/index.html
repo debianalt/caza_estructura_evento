@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Correspondencias Múltiples - Estructura del Evento de Caza</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Análisis de Correspondencias Múltiples</h1>
+            <p class="subtitle">Estructura del Evento de Caza en Misiones, Argentina</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Información general -->
+        <section class="info-section">
+            <div class="info-card">
+                <h3>Resumen del Análisis</h3>
+                <div id="summary-stats"></div>
+            </div>
+        </section>
+
+        <!-- Gráfico de valores propios -->
+        <section class="chart-section">
+            <h2>Valores Propios (Scree Plot)</h2>
+            <p class="description">Muestra la cantidad de varianza explicada por cada dimensión del MCA</p>
+            <div id="scree-plot"></div>
+        </section>
+
+        <!-- Mapa factorial de individuos -->
+        <section class="chart-section">
+            <h2>Mapa Factorial de Individuos</h2>
+            <p class="description">Proyección de los individuos en el espacio factorial (Dimensiones 1 y 2). Los colores representan los clusters identificados.</p>
+            <div id="individuals-map"></div>
+        </section>
+
+        <!-- Mapa factorial de categorías -->
+        <section class="chart-section">
+            <h2>Mapa Factorial de Categorías</h2>
+            <p class="description">Proyección de las categorías de variables en el espacio factorial</p>
+            <div id="categories-map"></div>
+        </section>
+
+        <!-- Mapa factorial combinado -->
+        <section class="chart-section">
+            <h2>Biplot: Individuos y Categorías</h2>
+            <p class="description">Visualización conjunta de individuos (puntos) y categorías (vectores)</p>
+            <div id="biplot"></div>
+        </section>
+
+        <!-- Gráfico 3D -->
+        <section class="chart-section">
+            <h2>Visualización 3D</h2>
+            <p class="description">Espacio tridimensional (Dimensiones 1, 2 y 3) de los individuos por cluster</p>
+            <div id="plot-3d"></div>
+        </section>
+
+        <!-- Distribución de clusters -->
+        <section class="chart-section">
+            <h2>Distribución de Clusters</h2>
+            <p class="description">Número de individuos en cada cluster identificado</p>
+            <div id="cluster-distribution"></div>
+        </section>
+
+        <!-- Información sobre clusters -->
+        <section class="info-section">
+            <h2>Interpretación de Clusters</h2>
+            <div class="cluster-info">
+                <div class="cluster-card" data-cluster="1">
+                    <h3>Cluster 1</h3>
+                    <p>Características principales del grupo 1 basadas en el análisis MCA</p>
+                </div>
+                <div class="cluster-card" data-cluster="2">
+                    <h3>Cluster 2</h3>
+                    <p>Características principales del grupo 2 basadas en el análisis MCA</p>
+                </div>
+                <div class="cluster-card" data-cluster="3">
+                    <h3>Cluster 3</h3>
+                    <p>Características principales del grupo 3 basadas en el análisis MCA</p>
+                </div>
+                <div class="cluster-card" data-cluster="4">
+                    <h3>Cluster 4</h3>
+                    <p>Características principales del grupo 4 basadas en el análisis MCA</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Análisis de Correspondencias Múltiples - Datos de cazadores en Misiones, Argentina</p>
+            <p>Visualizaciones interactivas creadas con Plotly.js</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
