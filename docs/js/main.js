@@ -151,6 +151,12 @@ function createIndividualsMap(individuals) {
 
 // 3. Mapa factorial de categorías
 function createCategoriesMap(categories) {
+    // Limpiar nombres de categorías (remover prefijo de variable)
+    const cleanNames = categories.category.map(cat => {
+        const parts = cat.split('__');
+        return parts.length > 1 ? parts[1] : cat;
+    });
+
     const trace = {
         x: categories.dim1,
         y: categories.dim2,
@@ -158,21 +164,38 @@ function createCategoriesMap(categories) {
         type: 'scatter',
         marker: {
             color: '#9b59b6',
-            size: 12,
+            size: 14,
             line: { color: 'white', width: 2 }
         },
-        text: categories.category,
+        text: cleanNames,
         textposition: 'top center',
-        textfont: { size: 10 },
+        textfont: {
+            size: 9,
+            color: '#2c3e50',
+            family: 'Arial, sans-serif'
+        },
         hovertemplate: '<b>%{text}</b><br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
     };
 
     const layout = {
         ...baseLayout,
         title: 'Mapa Factorial de Categorías de Variables',
-        xaxis: { title: 'Dimensión 1', zeroline: true, zerolinewidth: 2, zerolinecolor: '#999' },
-        yaxis: { title: 'Dimensión 2', zeroline: true, zerolinewidth: 2, zerolinecolor: '#999' },
-        showlegend: false
+        xaxis: {
+            title: 'Dimensión 1',
+            zeroline: true,
+            zerolinewidth: 2,
+            zerolinecolor: '#999',
+            range: [-2, 3]  // Ajustar rango para ver todas las categorías
+        },
+        yaxis: {
+            title: 'Dimensión 2',
+            zeroline: true,
+            zerolinewidth: 2,
+            zerolinecolor: '#999',
+            range: [-2, 3.5]  // Ajustar rango para ver todas las categorías
+        },
+        showlegend: false,
+        height: 650
     };
 
     Plotly.newPlot('categories-map', trace, layout, plotlyConfig);
