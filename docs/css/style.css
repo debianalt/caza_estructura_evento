@@ -186,6 +186,19 @@ main {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.info-card p {
+    text-align: justify;
+    position: relative;
+    z-index: 1;
+}
+
+.info-card ul,
+.info-card ol {
+    text-align: justify;
+    position: relative;
+    z-index: 1;
+}
+
 #summary-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
