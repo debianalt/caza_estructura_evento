@@ -1,7 +1,7 @@
 // Main JavaScript para visualizaciones MCA
 
 // Configuración de colores académicos/científicos
-const academicBlue = '#2C5F7C';
+const academicBlue = '#D8D8D8';
 
 // Configuración de colores por cluster
 const clusterColors = {
@@ -29,7 +29,7 @@ const plotlyConfig = {
 // Layout base para gráficos - Tema oscuro
 const baseLayout = {
     font: {
-        family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+        family: '"IBM Plex Mono", "Courier New", monospace',
         size: 12,
         color: '#e0e0e0'
     },
@@ -258,7 +258,7 @@ function createCategoriesMap(categories) {
         textfont: {
             size: 8,
             color: academicBlue,
-            family: 'Arial, sans-serif'
+            family: '"IBM Plex Mono", "Courier New", monospace'
         },
         hovertemplate: '<b>%{text}</b><br>Dim1: %{x:.3f}<br>Dim2: %{y:.3f}<extra></extra>'
     };
@@ -558,7 +558,7 @@ function createMisionesMap(geoData) {
                 textfont: {
                     size: 9,
                     color: academicBlue,
-                    family: 'Arial, sans-serif'
+                    family: '"IBM Plex Mono", "Courier New", monospace'
                 },
                 hovertemplate: '<b>%{text}</b><br>' +
                                'Casos: ' + deptsFiltrados.map(d => d.total_casos).map(c => '%{marker.size}') +
